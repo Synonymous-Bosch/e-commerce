@@ -3,7 +3,7 @@ import DiscountCode from './DiscountCode';
 import BasketItem from './BasketItem';
 
 
-const Basket = ({basketItems, totalPrice, onHandleDiscount, discount10}) => {
+const Basket = ({basketItems, displayPrice, onHandleDiscount}) => {
 
     const basketItemNodes = basketItems.map((basketItem) => {
       return (
@@ -16,7 +16,7 @@ const Basket = ({basketItems, totalPrice, onHandleDiscount, discount10}) => {
   return (
     <>
     <h3>Your Basket</h3>
-    { discount10===true ? <p>Total: £{(totalPrice * 0.9).toFixed(2)}</p> : <p>Total: £{totalPrice.toFixed(2)} </p>}
+    <p>Total: £{displayPrice.toFixed(2)} </p>
     <DiscountCode onHandleDiscount={onHandleDiscount}/>
     <ul>{basketItemNodes}</ul>
     

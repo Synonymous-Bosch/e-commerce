@@ -13,7 +13,6 @@ const DiscountCode = ({onHandleDiscount}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(inputText)
         onHandleDiscount(inputText)
     }
   
